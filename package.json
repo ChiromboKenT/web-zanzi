@@ -20,6 +20,7 @@
     "nodemailer": "^6.4.4",
     "request": "^2.88.2",
     "request-promise": "^4.2.5",
+    "sendgrid": "^5.2.3",
     "sweetalert2": "^9.9.0"
   }
 }

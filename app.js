@@ -9,11 +9,10 @@ const  AppError = require("./appError")
 const OAuth2 = google.auth.OAuth2;
 const path = require("path")
 
-
-const refresh_token ="1//03z3jLViPdGzDCgYIARAAGAMSNwF-L9IrEV7Ben9vPc3mMIxzjhNc0HGMo4wEczqqxJK4Gk3qAX0zdpqRLhYTC29_AfP1BsnF8Iw"
 const getToken = function(req,res){
    var mail = nodemailer.createTransport({
-      service: 'gmail',
+     host: 'smtp.sendgrid.net',
+     port: "465",
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASSWORD
