@@ -1,8 +1,4 @@
 
-
-if(process.env.NODE_ENV !== "production"){
-   dotenv = require("dotenv")
-  }
 const request = require("request")
 const express = require("express");
 const {google} = require("googleapis")
