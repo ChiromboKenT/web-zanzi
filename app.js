@@ -5,9 +5,6 @@ const {google} = require("googleapis")
 const nodemailer = require("nodemailer")
 const expressHbs = require("express-handlebars")
 
-
-dotenv.config({path: './.env'});
-
 const  AppError = require("./appError")
 const OAuth2 = google.auth.OAuth2;
 const path = require("path")
