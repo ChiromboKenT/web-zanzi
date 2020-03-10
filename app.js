@@ -20,7 +20,7 @@ const getToken = function(req,res){
     });
 
     const mailOptions = {
-      from: 'Zanzibar Website <kenmbi290@gmail.com>',
+      from: `Zanzibar Website <${req.body.email}>`,
       to: 'Zanzibar website chirombokenny@outlook.com',
       subject: "RSVP: Zanzibar Holiday",
       generateTextFromHTML: true,

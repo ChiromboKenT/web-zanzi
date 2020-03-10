@@ -158,7 +158,9 @@
     height: 1.4rem; }
 
 .hotel-stars {
-  margin-right: 1.5rem; }
+  margin-right: 1.5rem; 
+margin-bottom: 2.5rem;
+}
 
 .header {
   position: fixed;
@@ -407,16 +409,26 @@
       font-size: 1.7rem; } }
   .info-container {
     position: relative;
-    max-width: 100vh;
     background-color: #ccc;
     width: 60%;
-    padding: 2rem 0;
     padding-top: 5rem;
     border: 3px solid green;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+   }
     @media (max-width: 37.5em) {
       .info-container {
-        width: 100%; } }
+        width: 100%; 
+        height: 100%;
+        overflow-y: scroll;
+      }
+     }
+     @media (max-width: 56.25rem){
+      .info-container {
+        width: 100%; 
+        height: 90%;
+        overflow-y: scroll;
+      }
+     }
   .info-images {
     display: flex;
     flex-direction: row; }
@@ -426,35 +438,68 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.8rem;
+    font-size: 23px;
     padding: 1rem 2rem; }
     @media (max-width: 56.25em) {
       .info-heading {
-        font-size: 1.5rem; } }
+        font-size: 1.5rem; } 
+      }
     @media (max-width: 37.5em) {
       .info-heading {
-        font-size: 1.8rem; } }
+        font-size: 23px;
+      letter-spacing: 3rem; } }
     .info-heading-3 {
       font-family: "Merienda", sans-serif;
       font-size: 1.4rem;
       font-weight: 700;
       letter-spacing: .15rem;
       text-transform: uppercase;
-      padding: 0 2rem; }
+
+      padding: 0 2rem;
+    }
       @media (max-width: 56.25em) {
         .info-heading-3 {
-          font-size: 1.5rem; } }
+          font-size: 20px } 
+        .info-heading{
+           font-size: 22px;
+        }
+        }
       @media (max-width: 37.5em) {
         .info-heading-3 {
-          font-size: 1.8rem; } }
+          font-size: 17px; } 
+        .info-heading{
+          font-size: 19px;
+        }
+      }
   .info-text1 {
+    font-size: 14px;
     padding: 0 2rem;
-    font-family: cursive, serif;
-    letter-spacing: .15rem; }
+    line-height: 2.7rem;
+    padding-bottom: 1.5rem;
+    font-weight: 700;
+    
+    font-family: 'Lato', sans-serif;
+    /* //letter-spacing: .15rem;  */
+  }
   .info-text2 {
-    padding: 0 2rem;
-    font-family: cursive, serif;
-    letter-spacing: .15rem; }
+    font-size: 12px;
+    padding: 1.5rem 2rem;
+    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+   letter-spacing: initial; 
+  }
+
+    @media (max-width: 37.5rem){
+      .info-text1{
+        font-size: 16px;
+      }
+      .info-text2{
+        font-size: 16px;
+      }
+    }
+
+
+
   .info:target {
     opacity: 1;
     visibility: visible;
@@ -528,5 +573,14 @@ body {
 .u-list{
   list-style: circle;
   padding: 0rem 4.5rem;
-  font-family: sans-serif , serif;
+  margin-left: 5.5rem;
+  margin-top: 1.5rem;
+ 
+  font-family: inherit;
+}
+@media (max-width:37.5rem ){
+  .u-list{
+  padding: 0;
+   margin-left: 3rem;
+  }
 }
