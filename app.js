@@ -6,13 +6,11 @@ const nodemailer = require("nodemailer")
 const expressHbs = require("express-handlebars")
 
 const  AppError = require("./appError")
-const OAuth2 = google.auth.OAuth2;
 const path = require("path")
 
 const getToken = function(req,res){
    var mail = nodemailer.createTransport({
-     host: 'smtp.sendgrid.net',
-     port: "465",
+     service: 'SendGrid',
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASSWORD
@@ -21,7 +19,7 @@ const getToken = function(req,res){
 
     const mailOptions = {
       from: `Zanzibar Website <${req.body.email}>`,
-      to: 'Zanzibar website chirombokenny@outlook.com',
+      to: 'chirombokenny@outlook.com',
       subject: "RSVP: Zanzibar Holiday",
       generateTextFromHTML: true,
       html: `
