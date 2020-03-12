@@ -11,7 +11,7 @@ const sendEmail = async options =>{
      });
      var maillist = [
       'kenmbi290@gmail.com',
-      'shorai@penyes.co.za'
+      'shorai@penyesa.co.za',
    ]
      const mailOptions = {
       from: `Zanzibar Website <${options.request.email}>`,
