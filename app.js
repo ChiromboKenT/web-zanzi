@@ -2,47 +2,15 @@
 const request = require("request")
 const express = require("express");
 const {google} = require("googleapis")
-const nodemailer = require("nodemailer")
+const dotenv = require('dotenv')
+dotenv.config({path: "./.env"})
+const sendEmail = require("./email")
 const expressHbs = require("express-handlebars")
 
 const  AppError = require("./appError")
 const path = require("path")
 
-const getToken = function(req,res){
-   var mail = nodemailer.createTransport({
-     service: 'SendGrid',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASSWORD
-      }
-    });
 
-    const mailOptions = {
-      from: `Zanzibar Website <${req.body.email}>`,
-      to: 'chirombokenny@outlook.com',
-      subject: "RSVP: Zanzibar Holiday",
-      generateTextFromHTML: true,
-      html: `
-      <div><h2>Dear Shorai Chirombo</h2></div><br>
-      <div><b>You have received an email from ${req.body.name}</b></div>
-      <div>
-         <p>Preffered Options : ${req.body.option}</p>
-         <p>Email      :  ${req.body.email}</p>
-         <p> Message   :  ${req.body.message}</p>
-         <p>HAPPY 50TH</>
-      `,
-   };
-
-     
-   mail.sendMail(mailOptions, function(error, info){
-      if (error) {
-      console.log(error);
-      } else {
-      console.log('Email sent: ' + info.response);
-      }
-   });
-
-}
 
 //Setup &Middleware 
 const app = express();
@@ -63,12 +31,37 @@ app.use(express.static(path.join(__dirname,"public")));
 //Routes
 
 
-app.post("/sub", (req,res)=>{
-  getToken(req, res);
+app.post("/sub",  (req,res)=>{
+  try{
+      sendEmail({
+         request: req.body,
+      })
+      res.status(200);
+  }catch(err){
+     console.log(err)
+    // next(new AppError('There was an error sending the email. Try Again'),500)
+    res.status(500).json({
+       status: 'Unsuccessful ',
+       message : "Please Contact System Administrator",
+       data: err
+
+    })
+  }
   
 
 })
+app.get("/donwnloadFile", (req,res)=>{
+   var file = path.join(__dirname, 'public','pdf','tourguide.pdf');
 
+   res.download(file, (Error)=>{
+      if(Error){
+         console.log(Error)
+         res.status(404);
+      }else{
+         res.status(200);
+      }
+   })
+})
 app.get("/", (req,res)=>{
    res.render("index");
 })

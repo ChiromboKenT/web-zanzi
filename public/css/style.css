@@ -106,14 +106,16 @@
   border: 10px solid pink;
   margin-bottom: 2.5rem; }
   .pic-text-1 {
+   
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     padding: 1rem 2.5rem; }
   .pic-text {
     text-align: center;
-    font-size: 1.2rem; }
+    font-size: 1.3rem; }
 
 .options-container {
+  background-color: papayawhip;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -159,7 +161,7 @@
 
 .hotel-stars {
   margin-right: 1.5rem; 
-margin-bottom: 2.5rem;
+margin-bottom: 1.5rem;
 }
 
 .header {
@@ -360,7 +362,7 @@ margin-bottom: 2.5rem;
   .svg-close-w {
     width: 4rem;
     height: 4rem;
-    fill: green; }
+    fill:  rgba(128, 41, 41, 0.76); }
 
 .svg-menu {
   width: 5rem;
@@ -409,26 +411,29 @@ margin-bottom: 2.5rem;
       font-size: 1.7rem; } }
   .info-container {
     position: relative;
-    background-color: #ccc;
+    background-color:#d5c1db;
     width: 60%;
-    padding-top: 5rem;
-    border: 3px solid green;
+    max-height: 85vh;
+    border:  10px double rgba(128, 41, 41, 0.76);
     box-sizing: border-box;
+    overflow-y: scroll;
    }
+   @media (max-width: 56.25rem){
+    .info-container {
+      width:80%; 
+      max-height: 90%;
+      
+    }
+  }
     @media (max-width: 37.5em) {
       .info-container {
         width: 100%; 
-        height: 100%;
-        overflow-y: scroll;
+        max-height:90%;
+        
       }
      }
-     @media (max-width: 56.25rem){
-      .info-container {
-        width: 100%; 
-        height: 90%;
-        overflow-y: scroll;
-      }
-     }
+     
+     
   .info-images {
     display: flex;
     flex-direction: row; }
@@ -436,18 +441,19 @@ margin-bottom: 2.5rem;
     font-family: "Merienda", sans-serif;
     text-transform: uppercase;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 23px;
+    font-size: 1.6em;
     padding: 1rem 2rem; }
     @media (max-width: 56.25em) {
       .info-heading {
-        font-size: 1.5rem; } 
+        font-size: 1.5em; } 
       }
     @media (max-width: 37.5em) {
       .info-heading {
-        font-size: 23px;
-      letter-spacing: 3rem; } }
+        font-size:1.35em;
+      letter-spacing: .5rem; } }
     .info-heading-3 {
       font-family: "Merienda", sans-serif;
       font-size: 1.4rem;
@@ -460,16 +466,11 @@ margin-bottom: 2.5rem;
       @media (max-width: 56.25em) {
         .info-heading-3 {
           font-size: 20px } 
-        .info-heading{
-           font-size: 22px;
-        }
         }
       @media (max-width: 37.5em) {
         .info-heading-3 {
           font-size: 17px; } 
-        .info-heading{
-          font-size: 19px;
-        }
+       
       }
   .info-text1 {
     font-size: 14px;
@@ -491,10 +492,10 @@ margin-bottom: 2.5rem;
 
     @media (max-width: 37.5rem){
       .info-text1{
-        font-size: 16px;
+        font-size: 15px;
       }
       .info-text2{
-        font-size: 16px;
+        font-size: 1em;
       }
     }
 
@@ -574,13 +575,37 @@ body {
   list-style: circle;
   padding: 0rem 4.5rem;
   margin-left: 5.5rem;
-  margin-top: 1.5rem;
- 
-  font-family: inherit;
+  font-size: 1.2em;
+ letter-spacing: .1rem;
+  font-family: "Poppins" , sans-serif;
 }
 @media (max-width:37.5rem ){
   .u-list{
   padding: 0;
-   margin-left: 3rem;
+   margin-left: 5rem;
+   font-size: 1em;
   }
+}
+
+.tours{
+  padding: 1.5rem 2.5rem;
+  background-color: rgba(214, 193, 219, 0.68);
+  border: 10px double papayawhip;
+  margin-bottom: 1.2rem;
+}
+.tour-text{
+  margin-bottom: .8rem;
+}
+.tour-list{
+  margin-left: 3.5rem;
+  list-style-type: disc;
+  
+}
+.tour-heading{
+  text-transform: uppercase;
+ 
+}
+.tour-intro{
+  padding: .5rem;
+  margin: 1rem .5rem;
 }
