@@ -1,9 +1,6 @@
 
 const request = require("request")
 const express = require("express");
-const {google} = require("googleapis")
-const dotenv = require('dotenv')
-dotenv.config({path: "./.env"})
 const sendEmail = require("./email")
 const expressHbs = require("express-handlebars")
 
