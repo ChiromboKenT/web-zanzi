@@ -29,6 +29,7 @@ const sendEmail = async options =>{
          <div class="text2" style="text-align: left;background-color: rgb(136, 192, 214);padding: 3rem;width: 40%;">
             Name              :  ${options.request.name} <br><br>
             Preffered Options :  ${options.request.option}<br><br>
+            No. Of People     :  ${options.request.guest}<br><br>
             Message           :  ${options.request.message}<br><br>
             Email             :  ${options.request.email}<br><br>
             Cell              :  ${options.request.number}<br>
