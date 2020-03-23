@@ -184,9 +184,14 @@
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
   .options-pic-1 {
     max-width: 33.333%; 
+    height: auto;
     -webkit-transition: all .3s; 
     -o-transition: all .3s; 
     transition: all .3s;
