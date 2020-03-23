@@ -585,7 +585,8 @@ margin-bottom: 1.5rem;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
-            flex-direction: row; }
+            flex-direction: row;
+          align-items: center; }
   .info-heading {
     font-family: "Merienda", sans-serif;
     text-transform: uppercase;
